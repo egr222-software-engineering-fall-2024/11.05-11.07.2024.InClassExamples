@@ -16,7 +16,7 @@ public class TimeSpanClient {
         timeSpanList.add(new TimeSpan(2, 0));
 
         System.out.println("Sorting " + timeSpanList);
-//        Collections.sort(timeSpanList);
+        Collections.sort(timeSpanList);
         System.out.println("   result " + timeSpanList);
     }
 }

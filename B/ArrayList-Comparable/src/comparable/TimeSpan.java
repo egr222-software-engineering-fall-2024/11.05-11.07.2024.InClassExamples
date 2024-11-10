@@ -4,7 +4,7 @@ package comparable;
 // Class invariant: minutes < 60
 
 //Make this code implement Comparable interface
-public class TimeSpan {
+public class TimeSpan implements Comparable<TimeSpan> {
     private int hours;
     private int minutes;
 
@@ -40,6 +40,16 @@ public class TimeSpan {
     // Returns a String for this time span such as "6h15m".
     public String toString() {
         return hours + "h" + minutes + "m";
+    }
+
+    @Override
+    public int compareTo(TimeSpan o) {
+        if (this.hours == o.hours) {
+            // hours are the same - return the difference in minutes
+            return this.minutes - o.minutes;
+        }
+        // hours are different - return the difference in hours
+        return this.hours - o.hours;
     }
 
     // YOUR CODE GOES HERE
